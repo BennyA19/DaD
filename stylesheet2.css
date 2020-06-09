@@ -1,0 +1,112 @@
+/*@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+html {
+    font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+    html { font-family: 'Inter var', sans-serif; }
+}
+*/
+
+.body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: Charis SL sans-serif;
+}
+.container{
+    width: 1420px;
+    height: 1000px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    background-color: rgb(235, 233, 229);
+}
+.main{
+    width: 1420px;
+    height: 445px;
+    background-color:rgb(184, 206, 248);
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    border-color: rgb(124, 147, 190);
+    border: 2px;
+}
+
+.search-box{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%-50%);
+    background-color: white;
+    height: 40px;
+    width: 55%;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(22, 22, 24, 0.025), 0 15px 40px rgba(101, 104, 117, 0.2);
+}
+
+.search-btn{
+    color: grey;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% ;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-control{
+    border:none ;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: rgb(41, 41, 41);
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 500px;
+}
+.home{
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    transform: translate(-50%-50%);
+    background-color:rgb(184, 206, 248);
+    height: 20px;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(22, 22, 24, 0.025), 0 15px 40px rgba(101, 104, 117, 0.2);
+}
+.login{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    transform: translate(-50%-50%);
+    background-color:rgb(184, 206, 248);
+    height: 20px;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(22, 22, 24, 0.025), 0 15px 40px rgba(101, 104, 117, 0.2);
+}
+
+.table{
+    top: 57%;
+    position: absolute;
+    left: 20%;
+    width: 80%;
+
+
+}
+.tbl3{
+    position: absolute;
+    left: 40%;
+    top: 47%;
+}
