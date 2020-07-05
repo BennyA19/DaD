@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>DAD Home</h1>
+  <p>Wilkommen auf der DAD, eine Website entwickelt von der <em>DAD-Projektgruppe</em>!</p>
+  <h2>Dynamischer Kontent:</h2>
+  <p>Die Dad verfügt über:</p>
+  <ul>
+    <li><strong>Wörter gesamt:</strong> {{ num_words }}</li>
+    <li><strong>Ipas:</strong> {{ num_ipas }}</li>
+    <li><strong>Wörter verfügbar:</strong> {{ num_words_available }}</li>
+    <li><strong>Tags:</strong> {{ num_tag }}</li>
+  </ul>
+{% endblock %}

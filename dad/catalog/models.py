@@ -1,3 +1,85 @@
 from django.db import models
-
 # Create your models here.
+class tag(models.Model):
+    """Model representing a tag of the word."""
+    name = models.CharField(max_length=200, help_text='Enter a tag (e.g. tutoring)')
+    
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.name
+
+class language(models.Model):
+    """Model representing a tag of the word."""
+    name = models.CharField(max_length=200, help_text='Enter a language (e.g. de/de)')
+    
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.name
+
+class active(models.Model):
+    """Value representing activity."""
+    name = models.CharField(max_length=200, help_text='Enter an option (e.g. active / not active)')
+    
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.name
+
+from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+
+class word(models.Model):
+    """Model representing a Word (but not a specific copy of the word)."""
+    entry = models.CharField(max_length=200)
+    index = models.CharField(max_length=1) 
+    tag = models.ManyToManyField(tag, help_text='Select a genre for this word')
+    language = models.ManyToManyField(language, help_text='Select a language for the word')
+    updated = models.DateTimeField(auto_now=True)
+    activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
+
+    Work_STATUS = (
+        ('i', 'in Work'),
+        ('n', 'new'),
+        ('a', 'Available'),
+        ('f', 'false'),
+    )
+
+    status = models.CharField(
+        max_length=1,
+        choices=Work_STATUS,
+        blank=True,
+        default='i',
+        help_text='word status',
+    )
+    
+    def display_tag(self):
+        """Create a string for the tag. This is required to display tag in Admin."""
+        return ', '.join(tag.name for tag in self.tag.all()[:3])
+    display_tag.short_description = 'tag'
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.entry
+    
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this word."""
+        return reverse('word-detail', args=[str(self.id)])
+
+import uuid
+
+class ipa(models.Model):
+
+    """Model representing a specific ipa of a word (e.g that could be used for it)."""
+    word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True)
+    ipa = models.CharField(max_length=400) 
+    syllable = models.IntegerField()
+    stress = models.CharField(max_length=20)
+    sampa = models.CharField(max_length=400)
+    activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
+    
+    
+    
+    class Meta:
+        ordering = ['word']
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.ipa} ({self.word.entry})'
