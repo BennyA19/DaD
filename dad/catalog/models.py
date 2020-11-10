@@ -74,7 +74,7 @@ class ipa(models.Model):
     stress = models.CharField(max_length=20)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-    audio = models.CharField(max_length=800, null=True)                                        ##Saves the path of the audio file
+    audio = models.FileField(upload_to='catalog/Audio/', default='catalog/Audio/AudioMissing.mp3')                                    ##Saves the path of the audio file
     
     
     
