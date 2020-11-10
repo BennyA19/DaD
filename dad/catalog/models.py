@@ -9,7 +9,7 @@ class tag(models.Model):
         return self.name
 
 class language(models.Model):
-    """Model representing a tag of the word."""
+    """Model representing the language of the word."""
     name = models.CharField(max_length=200, help_text='Enter a language (e.g. de/de)')
     
     def __str__(self):
@@ -28,9 +28,9 @@ from django.urls import reverse # Used to generate URLs by reversing the URL pat
 
 class word(models.Model):
     """Model representing a Word (but not a specific copy of the word)."""
-    entry = models.CharField(max_length=200)
+    entry = models.CharField(max_length=200)                        #Is the ID since entrys are unique
     index = models.CharField(max_length=1) 
-    tag = models.ManyToManyField(tag, help_text='Select a genre for this word')
+    tag = models.ManyToManyField(tag, help_text='Select a tag for this word')
     language = models.ManyToManyField(language, help_text='Select a language for the word')
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
@@ -74,6 +74,7 @@ class ipa(models.Model):
     stress = models.CharField(max_length=20)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
+    audio = models.CharField(max_length=800, null=True)                                        ##Saves the path of the audio file
     
     
     
