@@ -16,21 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `auth_group`
---
-
-DROP TABLE IF EXISTS `auth_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_group` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(150) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `auth_group`
 --
 
@@ -40,24 +25,6 @@ LOCK TABLES `auth_group` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `auth_group_permissions`
---
-
-DROP TABLE IF EXISTS `auth_group_permissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_group_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `group_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id`,`permission_id`),
-  KEY `auth_group_permissions_group_id_b120cbf9` (`group_id`),
-  KEY `auth_group_permissions_permission_id_84c5c92e` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `auth_group_permissions`
 --
 
@@ -65,24 +32,6 @@ LOCK TABLES `auth_group_permissions` WRITE;
 /*!40000 ALTER TABLE `auth_group_permissions` DISABLE KEYS */;
 /*!40000 ALTER TABLE `auth_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `auth_permission`
---
-
-DROP TABLE IF EXISTS `auth_permission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_permission` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `content_type_id` int(11) NOT NULL,
-  `codename` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
-  KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `auth_permission`
@@ -95,30 +44,6 @@ INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2
 UNLOCK TABLES;
 
 --
--- Table structure for table `auth_user`
---
-
-DROP TABLE IF EXISTS `auth_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `password` varchar(128) NOT NULL,
-  `last_login` datetime(6) DEFAULT NULL,
-  `is_superuser` tinyint(1) NOT NULL,
-  `username` varchar(150) NOT NULL,
-  `first_name` varchar(150) NOT NULL,
-  `last_name` varchar(150) NOT NULL,
-  `email` varchar(254) NOT NULL,
-  `is_staff` tinyint(1) NOT NULL,
-  `is_active` tinyint(1) NOT NULL,
-  `date_joined` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `auth_user`
 --
 
@@ -127,24 +52,6 @@ LOCK TABLES `auth_user` WRITE;
 INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$216000$j1uG6WMzkxHF$6q6VMfMX3gQ7OZ9tvBpQzzNlXf9VBOizHilkm0lecP8=','2020-11-10 12:56:04.846877',1,'admin','','','belo8392@th-wildau.de',1,1,'2020-11-10 10:33:29.588577');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `auth_user_groups`
---
-
-DROP TABLE IF EXISTS `auth_user_groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_user_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `group_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_user_groups_user_id_group_id_94350c0c_uniq` (`user_id`,`group_id`),
-  KEY `auth_user_groups_user_id_6a12ed8b` (`user_id`),
-  KEY `auth_user_groups_group_id_97559544` (`group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `auth_user_groups`
@@ -156,24 +63,6 @@ LOCK TABLES `auth_user_groups` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `auth_user_user_permissions`
---
-
-DROP TABLE IF EXISTS `auth_user_user_permissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auth_user_user_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
-  KEY `auth_user_user_permissions_user_id_a95ead1b` (`user_id`),
-  KEY `auth_user_user_permissions_permission_id_1fbb5f2c` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `auth_user_user_permissions`
 --
 
@@ -181,20 +70,6 @@ LOCK TABLES `auth_user_user_permissions` WRITE;
 /*!40000 ALTER TABLE `auth_user_user_permissions` DISABLE KEYS */;
 /*!40000 ALTER TABLE `auth_user_user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `catalog_active`
---
-
-DROP TABLE IF EXISTS `catalog_active`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_active` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `catalog_active`
@@ -207,20 +82,6 @@ INSERT INTO `catalog_active` VALUES (1,'active'),(2,'inactive');
 UNLOCK TABLES;
 
 --
--- Table structure for table `catalog_audio`
---
-
-DROP TABLE IF EXISTS `catalog_audio`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_audio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `path` varchar(400) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `catalog_audio`
 --
 
@@ -228,28 +89,6 @@ LOCK TABLES `catalog_audio` WRITE;
 /*!40000 ALTER TABLE `catalog_audio` DISABLE KEYS */;
 /*!40000 ALTER TABLE `catalog_audio` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `catalog_ipa`
---
-
-DROP TABLE IF EXISTS `catalog_ipa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_ipa` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ipa` varchar(400) NOT NULL,
-  `syllable` int(11) NOT NULL,
-  `stress` varchar(20) NOT NULL,
-  `sampa` varchar(400) NOT NULL,
-  `activity_id` int(11) DEFAULT NULL,
-  `word_id` int(11) DEFAULT NULL,
-  `audio` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `catalog_ipa_activity_id_cd09b042` (`activity_id`),
-  KEY `catalog_ipa_word_id_a1418e32` (`word_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `catalog_ipa`
@@ -262,20 +101,6 @@ INSERT INTO `catalog_ipa` VALUES (1,'ʇsǝ⊥',1,'1-1','test',1,1,'catalog/Audio
 UNLOCK TABLES;
 
 --
--- Table structure for table `catalog_language`
---
-
-DROP TABLE IF EXISTS `catalog_language`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_language` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `catalog_language`
 --
 
@@ -284,20 +109,6 @@ LOCK TABLES `catalog_language` WRITE;
 INSERT INTO `catalog_language` VALUES (6,'eng/eng'),(5,'de/de');
 /*!40000 ALTER TABLE `catalog_language` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `catalog_tag`
---
-
-DROP TABLE IF EXISTS `catalog_tag`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_tag` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `catalog_tag`
@@ -310,25 +121,6 @@ INSERT INTO `catalog_tag` VALUES (1,'City');
 UNLOCK TABLES;
 
 --
--- Table structure for table `catalog_word`
---
-
-DROP TABLE IF EXISTS `catalog_word`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_word` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entry` varchar(200) NOT NULL,
-  `index` varchar(1) NOT NULL,
-  `updated` datetime(6) NOT NULL,
-  `status` varchar(1) NOT NULL,
-  `activity_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `catalog_word_activity_id_a2b4a894` (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `catalog_word`
 --
 
@@ -337,24 +129,6 @@ LOCK TABLES `catalog_word` WRITE;
 INSERT INTO `catalog_word` VALUES (1,'Test','T','2020-11-10 13:07:16.286723','n',1),(2,'Test2','T','0000-00-00 00:00:00.000000','',NULL);
 /*!40000 ALTER TABLE `catalog_word` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `catalog_word_language`
---
-
-DROP TABLE IF EXISTS `catalog_word_language`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_word_language` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `word_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `catalog_word_language_word_id_language_id_e9d0b509_uniq` (`word_id`,`language_id`),
-  KEY `catalog_word_language_word_id_db5b3dc8` (`word_id`),
-  KEY `catalog_word_language_language_id_dd7467c6` (`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `catalog_word_language`
@@ -367,24 +141,6 @@ INSERT INTO `catalog_word_language` VALUES (2,1,5),(3,1,6);
 UNLOCK TABLES;
 
 --
--- Table structure for table `catalog_word_tag`
---
-
-DROP TABLE IF EXISTS `catalog_word_tag`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog_word_tag` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `word_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `catalog_word_tag_word_id_tag_id_78620f1d_uniq` (`word_id`,`tag_id`),
-  KEY `catalog_word_tag_word_id_cad6f3d8` (`word_id`),
-  KEY `catalog_word_tag_tag_id_e64de049` (`tag_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `catalog_word_tag`
 --
 
@@ -393,28 +149,6 @@ LOCK TABLES `catalog_word_tag` WRITE;
 INSERT INTO `catalog_word_tag` VALUES (1,1,1);
 /*!40000 ALTER TABLE `catalog_word_tag` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `django_admin_log`
---
-
-DROP TABLE IF EXISTS `django_admin_log`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `django_admin_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `action_time` datetime(6) NOT NULL,
-  `object_id` longtext,
-  `object_repr` varchar(200) NOT NULL,
-  `action_flag` smallint(5) unsigned NOT NULL,
-  `change_message` longtext NOT NULL,
-  `content_type_id` int(11) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `django_admin_log_content_type_id_c4bce8eb` (`content_type_id`),
-  KEY `django_admin_log_user_id_c564eba6` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `django_admin_log`
@@ -427,22 +161,6 @@ INSERT INTO `django_admin_log` VALUES (1,'2020-11-10 10:35:34.821839','1','activ
 UNLOCK TABLES;
 
 --
--- Table structure for table `django_content_type`
---
-
-DROP TABLE IF EXISTS `django_content_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `django_content_type` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app_label` varchar(100) NOT NULL,
-  `model` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `django_content_type`
 --
 
@@ -453,22 +171,6 @@ INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(2,'auth','permi
 UNLOCK TABLES;
 
 --
--- Table structure for table `django_migrations`
---
-
-DROP TABLE IF EXISTS `django_migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `django_migrations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `applied` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `django_migrations`
 --
 
@@ -477,22 +179,6 @@ LOCK TABLES `django_migrations` WRITE;
 INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-11-03 07:22:35.680356'),(2,'auth','0001_initial','2020-11-03 07:22:35.958769'),(3,'admin','0001_initial','2020-11-03 07:22:36.020273'),(4,'admin','0002_logentry_remove_auto_add','2020-11-03 07:22:36.025728'),(5,'admin','0003_logentry_add_action_flag_choices','2020-11-03 07:22:36.031681'),(6,'contenttypes','0002_remove_content_type_name','2020-11-03 07:22:36.066926'),(7,'auth','0002_alter_permission_name_max_length','2020-11-03 07:22:36.082302'),(8,'auth','0003_alter_user_email_max_length','2020-11-03 07:22:36.101173'),(9,'auth','0004_alter_user_username_opts','2020-11-03 07:22:36.107100'),(10,'auth','0005_alter_user_last_login_null','2020-11-03 07:22:36.124981'),(11,'auth','0006_require_contenttypes_0002','2020-11-03 07:22:36.126445'),(12,'auth','0007_alter_validators_add_error_messages','2020-11-03 07:22:36.131406'),(13,'auth','0008_alter_user_username_max_length','2020-11-03 07:22:36.148269'),(14,'auth','0009_alter_user_last_name_max_length','2020-11-03 07:22:36.168148'),(15,'catalog','0001_initial','2020-11-03 07:22:36.317855'),(16,'catalog','0002_auto_20200704_1529','2020-11-03 07:22:36.631695'),(17,'catalog','0003_delete_ipa','2020-11-03 07:22:36.636158'),(18,'catalog','0004_ipa','2020-11-03 07:22:36.698159'),(19,'catalog','0005_auto_20200705_1607','2020-11-03 07:22:36.717998'),(20,'catalog','0006_auto_20200705_1607','2020-11-03 07:22:36.731390'),(21,'catalog','0007_auto_20200705_1612','2020-11-03 07:22:36.743791'),(22,'catalog','0008_auto_20200705_1618','2020-11-03 07:22:36.758671'),(23,'catalog','0009_auto_20200705_1627','2020-11-03 07:22:36.771568'),(24,'catalog','0010_auto_20200705_1637','2020-11-03 07:22:36.783966'),(25,'catalog','0011_auto_20201028_1146','2020-11-03 07:22:36.796366'),(26,'catalog','0012_auto_20201028_1153','2020-11-03 07:22:36.809262'),(27,'catalog','0013_auto_20201103_0822','2020-11-03 07:22:36.821662'),(28,'sessions','0001_initial','2020-11-03 07:22:36.842494'),(29,'catalog','0014_auto_20201103_0840','2020-11-03 07:40:15.961402'),(30,'catalog','0015_auto_20201110_1121','2020-11-10 10:22:50.799142'),(31,'auth','0010_alter_group_name_max_length','2020-11-10 10:53:43.028047'),(32,'auth','0011_update_proxy_permissions','2020-11-10 10:53:43.033503'),(33,'auth','0012_alter_user_first_name_max_length','2020-11-10 10:53:43.054334'),(34,'catalog','0016_auto_20201110_1153','2020-11-10 10:53:43.100462'),(35,'catalog','0017_auto_20201110_1208','2020-11-10 11:08:55.985557');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `django_session`
---
-
-DROP TABLE IF EXISTS `django_session`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `django_session` (
-  `session_key` varchar(40) NOT NULL,
-  `session_data` longtext NOT NULL,
-  `expire_date` datetime(6) NOT NULL,
-  PRIMARY KEY (`session_key`),
-  KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `django_session`
@@ -513,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-16 12:05:06
+-- Dump completed on 2020-11-16 12:15:42
