@@ -34,6 +34,7 @@ class word(models.Model):
     language = models.ManyToManyField(language, help_text='Select a language for the word')
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
+    ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -68,7 +69,7 @@ import uuid
 class ipa(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
-    word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True)
+  #  word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True)
     ipa = models.CharField(max_length=400) 
     syllable = models.IntegerField()
     stress = models.CharField(max_length=20)
