@@ -18,14 +18,14 @@ admin.site.register(active)
 # Register the Admin classes for word using the decorator
 @admin.register(word)
 class WORDAdmin(admin.ModelAdmin):
-    list_display = ('entry', 'index','display_tag','updated')
+    list_display = ('id','entry', 'index','display_tag','updated')
 
 
 #admin.site.register(ipa)
 
 # Define the ipa class
 class IPAAdmin(admin.ModelAdmin):
-    list_filter = ('activity','word')
+    list_filter = ('activity','word',)
 
 # Register the admin class with the associated model
 admin.site.register(ipa, IPAAdmin)

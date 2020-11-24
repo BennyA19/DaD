@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>ipa: {{ ipa.ipa }}</h1>
+
+  <p><strong>ipa:</strong> <a href="">{{ ipa.ipa }}</a></p> <!-- index detail link not yet defined -->
+  <p><strong>syllable:</strong> {{ ipa.syllable }}</p> 
+  <p><strong>stress:</strong> {{ ipa.stress}}</p>  
+  <p><strong>sampa:</strong> {{ ipa.sampa}}</p>  
+  <p><strong>activity:</strong> {{ ipa.activity}}</p> 
+  <p><strong>audio:</strong> {{ ipa.audio}}</p> 
+<audio controls>
+  <source src="../../{{ ipa.audio}}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Copies</h4>
+
+ <!--    {% for copy in ipa.ipainstance_set.all %}
+      <hr>
+      <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
+        {{ copy.get_status_display }}
+      </p>
+      {% if copy.status != 'a' %}
+        <p><strong>Due to be returned:</strong> {{ copy.due_back }}</p>
+      {% endif %}
+      <p><strong>Imprint:</strong> {{ copy.imprint }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p>
+    {% endfor %}
+  </div>          -->                                                                  
+{% endblock %}

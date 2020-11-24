@@ -11,7 +11,7 @@ def index(request):
     num_words = word.objects.all().count()
     num_ipas = ipa.objects.all().count()
     
-    # Available books (status = 'a')
+    # Available words (status = 'a')
     num_words_available = word.objects.filter(status__exact='a').count()
     
     # The 'all()' is implied by default.    
@@ -35,3 +35,9 @@ class WordListView(generic.ListView):
 
 class WordDetailView(generic.DetailView):
     model = word
+
+class IpaListView(generic.ListView):
+    model = ipa
+
+class IpaDetailView(generic.DetailView):
+    model = ipa
