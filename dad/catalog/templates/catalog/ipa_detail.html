@@ -3,14 +3,14 @@
 {% block content %}
   <h1>ipa: {{ ipa.ipa }}</h1>
 
-  <p><strong>ipa:</strong> <a href="">{{ ipa.ipa }}</a></p> <!-- index detail link not yet defined -->
+  <p><strong>entry:</strong> <a href="/catalog/word/{{ word.id }}">{{ipa.def_word }} </a></p> <!-- entry detail link not yet defined -->
   <p><strong>syllable:</strong> {{ ipa.syllable }}</p> 
   <p><strong>stress:</strong> {{ ipa.stress}}</p>  
   <p><strong>sampa:</strong> {{ ipa.sampa}}</p>  
   <p><strong>activity:</strong> {{ ipa.activity}}</p> 
   <p><strong>audio:</strong> {{ ipa.audio}}</p> 
 <audio controls>
-  <source src="../../{{ ipa.audio}}" type="audio/mpeg">
+  <source src="../../{{ipa.audio}}" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 

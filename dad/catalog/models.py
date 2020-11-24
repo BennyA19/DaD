@@ -34,7 +34,7 @@ class word(models.Model):
     language = models.ManyToManyField(language, help_text='Select a language for the word')
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
- #  ipas = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True)
+    default_ipa = models.ManyToManyField('ipa', null=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -70,21 +70,20 @@ class ipa(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
     ipa = models.CharField(max_length=400)
-    word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True) 
+    def_word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True) 
     syllable = models.IntegerField()
     stress = models.CharField(max_length=20)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     audio = models.FileField(upload_to='catalog/Audio/', default='catalog/Audio/AudioMissing.mp3')                                    ##Saves the path of the audio file
-
+ #  wordID = models.ForeignKey('word.id', on_delete=models.SET_NULL, null=True)
     def get_absolute_url(self):
         """Returns the url to access a detail record for this ipa."""
         return reverse('ipa-detail', args=[str(self.id)])
 
-    
     class Meta:
         ordering = ['word']
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.ipa} ({self.word.entry})'
+        return f'{self.ipa} ({self.def_word.entry})'
