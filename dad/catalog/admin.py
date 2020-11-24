@@ -2,21 +2,21 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import tag, language, active, word, ipa
+from .models import Tag, Language, Active, Word, IPA
 
 #admin.site.register(tag)
 # Register the Admin classes for tag using the decorator
-@admin.register(tag)
+@admin.register(Tag)
 class TAGAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(language)
+admin.site.register(Language)
 
-admin.site.register(active)
+admin.site.register(Active)
 
 #admin.site.register(Word)
 # Register the Admin classes for word using the decorator
-@admin.register(word)
+@admin.register(Word)
 class WORDAdmin(admin.ModelAdmin):
     list_display = ('id','entry', 'index','display_tag','updated')
 
@@ -28,5 +28,5 @@ class IPAAdmin(admin.ModelAdmin):
     list_filter = ('activity','word',)
 
 # Register the admin class with the associated model
-admin.site.register(ipa, IPAAdmin)
+admin.site.register(IPA, IPAAdmin)
 

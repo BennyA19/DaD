@@ -1,6 +1,8 @@
+import uuid
 from django.db import models
+
 # Create your models here.
-class tag(models.Model):
+class Tag(models.Model):
     """Model representing a tag of the word."""
     name = models.CharField(max_length=200, help_text='Enter a tag (e.g. tutoring)')
     
@@ -8,7 +10,7 @@ class tag(models.Model):
         """String for representing the Model object."""
         return self.name
 
-class language(models.Model):
+class Language(models.Model):
     """Model representing the language of the word."""
     name = models.CharField(max_length=200, help_text='Enter a language (e.g. de/de)')
     
@@ -16,7 +18,7 @@ class language(models.Model):
         """String for representing the Model object."""
         return self.name
 
-class active(models.Model):
+class Active(models.Model):
     """Value representing activity."""
     name = models.CharField(max_length=200, help_text='Enter an option (e.g. active / not active)')
     
@@ -26,12 +28,12 @@ class active(models.Model):
 
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
 
-class word(models.Model):
+class Word(models.Model):
     """Model representing a Word (but not a specific copy of the word)."""
     entry = models.CharField(max_length=200)                        #Is the ID since entrys are unique
     index = models.CharField(max_length=1) 
-    tag = models.ManyToManyField(tag, help_text='Select a tag for this word')
-    language = models.ManyToManyField(language, help_text='Select a language for the word')
+    tag = models.ManyToManyField(Tag, help_text='Select a tag for this word')
+    language = models.ManyToManyField(Language, help_text='Select a language for the word')
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     default_ipa = models.ManyToManyField('ipa', null=True)
@@ -64,9 +66,9 @@ class word(models.Model):
         """Returns the url to access a detail record for this word."""
         return reverse('word-detail', args=[str(self.id)])
 
-import uuid
 
-class ipa(models.Model):
+
+class IPA(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
     ipa = models.CharField(max_length=400)

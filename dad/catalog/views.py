@@ -2,20 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from catalog.models import tag, language, active, word, ipa
+from catalog.models import Tag, Language, Active, Word, IPA
 
 def index(request):
     """View function for home page of site."""
 
     # Generate counts of some of the main objects
-    num_words = word.objects.all().count()
-    num_ipas = ipa.objects.all().count()
+    num_words = Word.objects.all().count()
+    num_ipas = IPA.objects.all().count()
     
     # Available words (status = 'a')
-    num_words_available = word.objects.filter(status__exact='a').count()
+    num_words_available = Word.objects.filter(status__exact='a').count()
     
     # The 'all()' is implied by default.    
-    num_tag = tag.objects.count()
+    num_tag = Tag.objects.count()
     
     context = {
         'num_words': num_words,
@@ -31,13 +31,13 @@ def index(request):
 from django.views import generic
 
 class WordListView(generic.ListView):
-    model = word
+    model = Word
 
 class WordDetailView(generic.DetailView):
-    model = word
+    model = Word
 
 class IpaListView(generic.ListView):
-    model = ipa
+    model = IPA
 
 class IpaDetailView(generic.DetailView):
-    model = ipa
+    model = IPA
