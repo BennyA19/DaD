@@ -34,6 +34,7 @@ class Word(models.Model):
     index = models.CharField(max_length=1) 
     tag = models.ManyToManyField(Tag, help_text='Select a tag for this word')
     language = models.ManyToManyField(Language, help_text='Select a language for the word')
+    # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     default_ipa = models.ManyToManyField('ipa', null=True)
@@ -74,7 +75,7 @@ class IPA(models.Model):
     ipa = models.CharField(max_length=400)
     def_word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True) 
     syllable = models.IntegerField()
-    stress = models.CharField(max_length=20)
+    stress = models.CharField(max_length=40)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     audio = models.FileField(upload_to='catalog/Audio/', default='catalog/Audio/AudioMissing.mp3')                                    ##Saves the path of the audio file

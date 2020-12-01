@@ -16,7 +16,8 @@ DB_NAME = "./scripts/sqlite_db/struct_2020-11-24.sqlite3"
 
 # Read sqlite query results into a pandas DataFrame
 con = sqlite3.connect(DB_NAME)
-load_query = "SELECT * from data_de" # limit 100"
+load_query = "SELECT * from data_de limit 1000"
+# titles mit pid ranjoinen
 data_de = pd.read_sql_query(load_query, con)
 
 # def run():
@@ -24,7 +25,7 @@ data_de = pd.read_sql_query(load_query, con)
 def write_words():
     print(f"Anzahl {data_de.size}: Starte Import!")
     for w in data_de.itertuples():
-    
+    # wort vorher suchen -> Tabelle über pid gruppieren
         entry = w.pid.split(":")[2]
         # print(_entry)
         ipa = IPA(ipa=str(w.col1), syllable=str(w.col3), stress=str(w.col4),
@@ -39,6 +40,7 @@ def write_words():
         # Wie zeigt sich eine M:N-Relation mit Language?
         #
         print(f"Lang:{lang_name}")
+        # leer = deutsch
         if  lang_name == '':
             lang=None
         else:
