@@ -25,7 +25,7 @@ SECRET_KEY = 'sudi806gv*r(z$8x0wr7^yrndkaacwwsio+#zuflnv5x!nuh$i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', "127.0.0.1"]
 
 
 # Application definition
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'dad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dadfinal',
-        'USER': 'dbadmin',
+        'NAME': 'dad',
+        'USER': 'dad',
         'PASSWORD': 'dad',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'EUROPE/Berlin'
+# TIME_ZONE = 'EUROPE/Berlin'
 
 USE_I18N = True
 
@@ -125,4 +125,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = 'static/'
