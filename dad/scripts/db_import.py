@@ -28,8 +28,10 @@ def write_words():
     # wort vorher suchen -> Tabelle über pid gruppieren
         entry = w.pid.split(":")[2]
         # print(_entry)
+        # IPA kommt aus multi.de!
         ipa = IPA(ipa=str(w.col1), syllable=str(w.col3), stress=str(w.col4),
                   sampa=str(w.col5))
+        # col6 = index
         try:
             ipa.save()
         except DataError: 
@@ -55,7 +57,9 @@ def write_words():
         w.save()
     print("Import abgeschlossen")
 
-
+#
+# updated in Vergangenheit setzen
+#
 def delete_all():
     Language.objects.all().delete()
     IPA.objects.all().delete()
