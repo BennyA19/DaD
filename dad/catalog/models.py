@@ -91,3 +91,4 @@ class IPA(models.Model):
         """String for representing the Model object."""
         return repr(self.__dict__)
         #return f'{self.ipa} ({self.def_word.entry})'
+
