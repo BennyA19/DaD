@@ -25,7 +25,7 @@ import pandas as pd
 import sqlite3
 
 from django.db import DataError
-from catalog.models import Word, IPA, Language
+from  catalog.models import Word, IPA, Language
 
 # DB_NAME = "./scripts/struct_2020-04-25.sqlite3"
 DB_NAME = "./scripts/sqlite_db/struct_2020-11-24.sqlite3"
@@ -79,7 +79,7 @@ def main(pid="de:A:A-Dur"):
             # print(f"Lang:{d.lang}")
             # leer = deutsch
             if  d.lang == '':
-                lang = None
+                lang = None 
             else:
                 lang, created = Language.objects.get_or_create(name=d.lang)
                 # print(lang, created)
