@@ -3,10 +3,10 @@
 
 import pandas as pd
 import sqlite3
-import dad.model
+import dad.model		#dad.model ist der Pfad zu den DB-Modellen
 
 # Read sqlite query results into a pandas DataFrame
-con = sqlite3.connect("struct_2020-04-25.sqlite3")
+con = sqlite3.connect("struct_2020-11-24.sqlite3")
 data_de = pd.read_sql_query("SELECT * from data_de", con)
 for row in data_de.iterrows:
     pass
