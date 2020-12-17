@@ -19,7 +19,6 @@ def index(request):
     
     context = {
         'num_words': num_words,
-        'num_ipas': num_ipas,
         'num_words_available': num_words_available,
         'num_tag': num_tag,
     }
@@ -35,9 +34,6 @@ class WordListView(generic.ListView):
 
 class WordDetailView(generic.DetailView):
     model = Word
-
-class IpaListView(generic.ListView):
-    model = IPA
 
 class IpaDetailView(generic.DetailView):
     model = IPA
