@@ -1,0 +1,17 @@
+Topos de:T:Topos
+Tovey de:T:Tovey
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-6-4d67c2499654> in <module>
+----> 1 main(None)
+
+~/TH_Wildau_git/DaD/dad/scripts/db_import.py in main(pid)
+     89             ipas = get_multi(t.pid)
+     90             # print(ipas)
+---> 91             i_min = int(ipas["row"].min())
+     92             i_max = int(ipas["row"].max()) + 1
+     93             for i in range(i_min, i_max):
+
+ValueError: cannot convert float NaN to integer
+
+ 
