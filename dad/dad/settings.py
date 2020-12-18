@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog',
+    #For Bootstrap
+    'crispy_forms',
 
 ]
+    #Also for Bootstrap
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,9 +84,9 @@ WSGI_APPLICATION = 'dad.wsgi.application'
 DATABASES = {                                           # standard values 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dadfinal',                                   # dad
-        'USER': 'root',                                   # dad
-        'PASSWORD': '',                               # dad
+        'NAME': 'dad',                                   # dad
+        'USER': 'dad',                                   # dad
+        'PASSWORD': 'dad',                               # dad
         'HOST': 'localhost',                             # localhost
         'PORT': '3306',                                  # 3306
     }

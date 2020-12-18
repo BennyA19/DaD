@@ -3,12 +3,13 @@
 {% block content %}
   <h1>entry: {{ word.entry }}</h1>
 
-  <p><strong>index:</strong> <a href="">{{ word.index }}</a></p> <!-- index detail link not yet defined -->
-  <p><strong>tag:</strong> {{ word.tag.all|join:", " }}</p>
-  <p><strong>language:</strong> {{ word.language }}</p> 
-  <p><strong>updated:</strong> {{ word.updated }}</p>  
-  <p><strong>activity:</strong> {{ word.actvity}}</p>
-  <p><strong>ipas:</strong>  {{ word.default_ipa}} {{word.default_ipa.all}}</p>
+  <p><strong>index:</strong>{{ word.index }}</p> <!-- index detail link not yet defined -->
+  <p><strong>tag: </strong> {{ word.tag.all|join:", " }}</p>
+  <p><strong>language: </strong> {{word.language.all|join:", "}}</p> 
+  <p><strong>updated: </strong> {{ word.updated }}</p>  
+  <p><strong>activity: </strong> {{ word.activity}}</p>
+  <p><strong>ipas: </strong>{{word.default_ipa.all|join:", "}}</p>
+  <p><strong>stress: </strong> {{def_word.stress|join:", "}}</p>
   <div style="margin-left:20px;margin-top:20px">
   </div>
 {% endblock %}
