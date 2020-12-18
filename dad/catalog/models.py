@@ -33,11 +33,11 @@ class Word(models.Model):
     entry = models.CharField(max_length=200)                        #Is the ID since entrys are unique
     index = models.CharField(max_length=1) 
     tag = models.ManyToManyField(Tag, help_text='Select a tag for this word')
-    language = models.ManyToManyField(Language, help_text='Select a language for the word')
+    language = models.ManyToManyField(Language, help_text='Select a language for the word', blank=True, default='deutsch') #, blank=True
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-    default_ipa = models.ManyToManyField('ipa', null=True)
+    default_ipa = models.ManyToManyField('ipa', null=True,default='NULL',blank=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -46,18 +46,23 @@ class Word(models.Model):
         ('f', 'false'),
     )
 
-    status = models.CharField(
-        max_length=1,
-        choices=Work_STATUS,
-        blank=True,
-        default='i',
-        help_text='word status',
+    status = models.CharField( max_length=1, choices=Work_STATUS, blank=True, default='i', help_text='word status',
     )
     
     def display_tag(self):
         """Create a string for the tag. This is required to display tag in Admin."""
         return ', '.join(tag.name for tag in self.tag.all()[:3])
     display_tag.short_description = 'tag'
+
+    def display_language(self):
+        """Create a string for the lanugage. This is required to display language in Admin."""
+        return ', '.join(language.name for language in self.language.all()[:3])
+    display_language.short_description = 'lang'
+
+    def display_stress(self):
+        """Create a string for the lanugage. This is required to display language in Admin."""
+        return (ipa.stress for stress in ipa.stress.all(self)[:3])
+    display_language.short_description = 'lang'
 
     def __str__(self):
         """String for representing the Model object."""
@@ -73,20 +78,23 @@ class IPA(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
     ipa = models.CharField(max_length=400)
-    def_word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True) 
+    def_word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True,blank=True) 
     syllable = models.IntegerField()
     stress = models.CharField(max_length=40)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     audio = models.FileField(upload_to='catalog/Audio/', default='catalog/Audio/AudioMissing.mp3')                                    ##Saves the path of the audio file
- #  wordID = models.ForeignKey('word.id', on_delete=models.SET_NULL, null=True)
     def get_absolute_url(self):
         """Returns the url to access a detail record for this ipa."""
         return reverse('ipa-detail', args=[str(self.id)])
+
+    def get_stress(self):
+        return(ipa.stress)
 
     class Meta:
         ordering = ['word']
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.ipa} ({self.def_word})'
+        return f'{self.ipa}'
+

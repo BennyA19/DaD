@@ -1,16 +1,35 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">entry</th>
+      <th scope="col">language</th>
+      <th scope="col">ipa</th>
+      <th scope="col">syllable</th>
+      <th scope="col">stress</th>
+      <th scope="col">sampa</th>
+    </tr>
+  </thead>
   <h1>word List</h1>
   {% if word_list %}
   <ul>
     {% for word in word_list %}
-      <li>
-        <a href="{{ word.get_absolute_url }}">{{ word.entry}}</a>
-      </li>
+     <tr>
+      <th scope="row">{{ word.id}}</th>
+      <th scope="row"><a href="{{ word.get_absolute_url}}">{{ word.entry}}</a></th>
+      <th scope="row">{{word.language.all|join:", "}}</a></th>
+      <th scope="row">{{word.default_ipa.all|join:", "}}</th>
+      <th scope="row">"{{ipa.syllable}}</th>
+      <th scope="row">"{{ipa.stress.all|join:", "}}</th>
+      <th scope="row">"{{ipa.sampa.all|join:", "}}</th>
+    </tr>
     {% endfor %}
   </ul>
   {% else %}
     <p>There are no words in the library.</p>
-  {% endif %}       
+  {% endif %}
+  </table>       
 {% endblock %}

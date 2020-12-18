@@ -12,11 +12,11 @@ from django.db import DataError
 from catalog.models import Word, IPA, Language
 
 # DB_NAME = "./scripts/struct_2020-04-25.sqlite3"
-DB_NAME = "./scripts/sqlite_db/struct_2020-11-24.sqlite3"
+DB_NAME = "./scripts/sqlite_db/struct_2020-11-24.sqlite3" #Pfad: "./scripts/sqlite_db/struct_2020-11-24.sqlite3"
 
 # Read sqlite query results into a pandas DataFrame
 con = sqlite3.connect(DB_NAME)
-load_query = "SELECT * from data_de limit 1000"
+load_query = "SELECT * from data_de limit 1000"         #limitierung auf 1000
 # titles mit pid ranjoinen
 data_de = pd.read_sql_query(load_query, con)
 
