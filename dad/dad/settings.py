@@ -77,14 +77,14 @@ WSGI_APPLICATION = 'dad.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {                                           # standard values 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dad',
-        'USER': 'dad',
-        'PASSWORD': 'dad',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'dadfinal',                                   # dad
+        'USER': 'root',                                   # dad
+        'PASSWORD': '',                               # dad
+        'HOST': 'localhost',                             # localhost
+        'PORT': '3306',                                  # 3306
     }
 }
 

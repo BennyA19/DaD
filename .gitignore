@@ -1,5 +1,5 @@
-dad/catalog/__pycache__/
-dad/dad/__pycache__/
+dad/catalog/__pycache__/*
+dad/dad/__pycache__/*
 dad/dad/settings.py
-dad/catalog/migrations/__pycache__/
+dad/catalog/migrations/__pycache__/*
 *.py~
