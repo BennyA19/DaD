@@ -5,7 +5,7 @@
 #  python manage.py  runscript db_import
 #
 
-Q_TITLES = "select * from titles " 
+Q_TITLES = "select * from titles where pid like 'de%'" 
 
 LATEST = " and latest = 1"
 
@@ -32,12 +32,13 @@ DB_NAME = "./scripts/sqlite_db/struct_2020-11-24.sqlite3" #Pfad: "./scripts/sqli
 
 # Read sqlite query results into a pandas DataFrame
 
-CON = sqlite3.connect(DB_NAME)
+
 load_query = "SELECT * from data_de limit 1000"
 
 # titles mit pid ranjoinen
 #data_de = pd.read_sql_query(q_a_dur, con)
 
+CON = sqlite3.connect(DB_NAME)
 
 def get_titles(pid):
     where  =  ""
@@ -45,7 +46,7 @@ def get_titles(pid):
     if pid != None:
         where = f" where pid = '{pid}'"
     query = Q_TITLES + where 
-    # print(query)
+    # print(query) 
     data = pd.read_sql_query(query, CON)
     return data
 
@@ -63,8 +64,13 @@ def get_multi(pid):
     data = pd.read_sql_query(query, CON)
     return data
 
-def main(pid="de:A:A-Dur"):
+def main(pid=None, start_with=None):
     titles = get_titles(pid)
+    print(f"pid: {pid}, start_with={start_with}")
+    if start_with != None:
+        titles = titles[titles["pid"].apply(lambda x:
+                x.split(":")[1] >= start_with.upper())]
+        # titles = titles[]
     for title in titles.itertuples():
         print(title.title, title.pid)
         wc = Word.objects.filter(entry=title.title).count()
@@ -102,6 +108,7 @@ def main(pid="de:A:A-Dur"):
                 word.default_ipa.add(ipa)
                 # print(ipa)
             word.save()
+    CON.close()
 
 #
 # updated in Vergangenheit setzen
