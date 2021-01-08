@@ -18,13 +18,13 @@
   <ul>
     {% for word in word_list %}
      <tr>
-      <th scope="row">{{ word.id}}</th>
+      <th scope="row">{{ word.id}}  </th>
       <th scope="row"><a href="{{ word.get_absolute_url}}">{{ word.entry}}</a></th>
-      <th scope="row">{{word.language.all|join:", "}}</a></th>
-      <th scope="row">{{word.default_ipa.all|join:", "}}</th>
-      <th scope="row">"{{ipa.syllable}}</th>
-      <th scope="row">"{{ipa.stress.all|join:", "}}</th>
-      <th scope="row">"{{ipa.sampa.all|join:", "}}</th>
+      <th scope="row">{{word.language.all|join:", "}} </th>
+      <th scope="row">{{word.default_ipa.all|join:" // "}}</th>
+      <th scope="row">{{ipa.syllable}}</th>
+      <th scope="row">{{ipa.stress.all|join:", "}}</th>
+      <th scope="row">{{ipa.sampa.all|join:", "}}</th>
     </tr>
     {% endfor %}
   </ul>
