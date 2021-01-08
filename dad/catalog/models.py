@@ -72,8 +72,6 @@ class Word(models.Model):
         """Returns the url to access a detail record for this word."""
         return reverse('word-detail', args=[str(self.id)])
 
-
-
 class IPA(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
