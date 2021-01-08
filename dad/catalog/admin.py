@@ -24,9 +24,10 @@ class WORDAdmin(admin.ModelAdmin):
 #admin.site.register(ipa)
 
 # Define the ipa class
+@admin.register(IPA)
 class IPAAdmin(admin.ModelAdmin):
-    list_filter = ('activity','word',)
-
+    list_display = ('id','ipa','syllable','sampa','stress','activity','audio')
+    list_filter =('id','activity')
 # Register the admin class with the associated model
-admin.site.register(IPA, IPAAdmin)
+#admin.site.register(IPA, IPAAdmin)
 
