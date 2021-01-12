@@ -37,7 +37,7 @@ class Word(models.Model):
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-#   default_ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
+#   ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -90,7 +90,7 @@ class IPA(models.Model):
         return(ipa.stress)
 
     class Meta:
-        ordering = ['word']
+        ordering = ['word','ipa']
 
     def __str__(self):
         """String for representing the Model object."""

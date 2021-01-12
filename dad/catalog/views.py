@@ -38,6 +38,15 @@ class WordDetailView(generic.DetailView):
 
 class IpaListView(generic.ListView):
     model = IPA
+#    context_object_name = 'multiple_ipa_list' #name for the list
+#    queryset = IPA.objects.filter(word__icontains == 'word')[:5]
+#    template_name = 'ipas/my_ipas_with_the_word_word_list.html' #specification the template name and location
+#    def get_context_data(self, **kwargs):
+#        # Call the base implementation first to get the context
+#        context = super(IpaListView, self).get_context_data(**kwargs)
+#        # Create any data and add it to the context
+#        context['some_data'] = 'This is just some data'
+#        return context
 
 class IpaDetailView(generic.DetailView):
     model = IPA

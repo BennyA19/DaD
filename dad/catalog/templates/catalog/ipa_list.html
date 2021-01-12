@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <h1>IPA List</h1>
+  {% if ipa_list %}
+    {% for ipa in ipa_list %}
+<table class="table table-striped">
+  <ul>
+     <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ipa</th>
+            <th scope="col">entry</th>
+            <th scope="col">syllable</th>
+            <th scope="col">stress</th>
+            <th scope="col">sampa</th>
+        </tr>
+    </thead>
+     <tr>
+        <th scope="row">{{ipa.id}}</th>
+        <th scope="row">{{ipa.ipa}}</th>
+        <th scope="row">{{ipa.word_id.word|join:", "}}}</th>
+        <th scope="row">{{ipa.syllable}}</th>
+        <th scope="row">{{ipa.stress}}</th>
+        <th scope="row">{{ipa.sampa}}</th>
+    </tr>
+    {% endfor %}
+  </ul>
+</table> 
+  {% else %}
+    <p>There are no IPAs in the library.</p>
+  {% endif %}    
+{% endblock %}
