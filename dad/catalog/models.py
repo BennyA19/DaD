@@ -37,7 +37,7 @@ class Word(models.Model):
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-#   ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
+    #ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -86,13 +86,21 @@ class IPA(models.Model):
         """Returns the url to access a detail record for this ipa."""
         return reverse('ipa-detail', args=[str(self.id)])
 
-    def get_stress(self):
-        return(ipa.stress)
+def get_stress(self):
+    return(ipa.stress)
 
-    class Meta:
-        ordering = ['word','ipa']
+    class WordSerializer(serializers.ModelSerializers):
+        ipas = serializers.SlugRelatedField(
+            many=True,
+            read_only=True,
+            slug_field="ipa"
+        )
+    
+class Meta:
+    ordering = ['word','ipa']
 
-    def __str__(self):
-        """String for representing the Model object."""
-        return repr(self.__dict__)
+
+def __str__(self):
+    """String for representing the Model object."""
+    return repr(self.__dict__)
 
