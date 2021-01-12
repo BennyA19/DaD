@@ -37,7 +37,7 @@ class Word(models.Model):
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-    default_ipa = models.ManyToManyField('ipa', null=True,default='NULL',blank=True)
+#   default_ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
 
     Work_STATUS = (
         ('i', 'in Work'),
@@ -76,7 +76,7 @@ class IPA(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
     ipa = models.CharField(max_length=400)
-    def_word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True,blank=True) 
+    word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True,blank=True) 
     syllable = models.IntegerField()
     stress = models.CharField(max_length=40)
     sampa = models.CharField(max_length=400)
