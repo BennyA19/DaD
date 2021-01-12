@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+<title>Homepage</title>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="../Frontend DAD/css/fontello.css">
+<link rel="stylesheet" href="../Frontend DAD/css/style.css">
+<script>$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+</head>
+
+<body>
+
+	<header class="header">
+    	<div class="main">
+        	
+        	<div class="logo">
+                <a href="index.html"><img src="../Frontend DAD/images/logo1.png"class="logo" /></a>
+            </div>
+            
+            <div class="page-name">
+            	<div class="project-name">    
+                <a href="index.html">Deutsche Aussprachedatenbank</a>
+                </div>
+                <div class="uni-name"> 
+                <a href="index.html">Martin-Luther-Universität Halle-Wittenberg</a>
+                </div>
+            </div>    
+            <div class="right-header"><a href="#">Henning Almus<i class="icon-user"></i></a></div>
+                       
+        </div>       
+    </header>
+   
+    <div class="navi">	
+    	<div class="main">
+        	
+        		<div class="search-bar">
+                    <input type="text" placeholder="Suche.."></i>
+                </div>
+                    
+                  
+                <div class="clear"></div>
+                
+         </div>
+    </div>
+    <div class="main">
+    	<div class="content">
+        	<button class="ipa-keyboard active">IPA Tastatur</button>
+                <div class="ipa-panel">
+                
+                    <table>
+                    	<tbody>
+                            <tr>
+                            	<th colspan="12">Konsonanten</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>bilabial</td>
+                                <td>labiodental</td>
+                                <td>dental</td>
+                                <td>alveolar</td>
+                                <td>postalveolar</td>
+                                <td>retroflex</td>
+                                <td>palatal</td>
+                                <td>velar</td>
+                                <td>uvular</td>
+                                <td>pharyngeal</td>
+                                <td>glottal</td>
+                            </tr>
+                            <tr>
+                                <td>Plosiv</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="p"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="b"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="t"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="d"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ʈ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɖ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="c"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɟ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="k"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="g"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="q"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɢ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ˀ"></td>
+                            </tr>
+                            <tr>
+                                <td>Nasal</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="m"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɱ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="n"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɳ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɲ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ŋ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɴ"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Vibrant</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="ʙ"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="r"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="ʀ"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tap oder Flap</td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ⱱ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɾ"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɽ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td> 
+                            </tr>
+                            <tr>
+                                <td>Frikativ</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɸ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="β"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="f"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="v"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="θ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ð"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="s"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="z"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʃ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʒ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʂ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʐ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ç"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʝ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="x"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɣ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="χ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʁ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ħ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʕ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="h"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɦ"></td>
+                            </tr>
+                            <tr>
+                                <td>Lateralfrikativ</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɬ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɮ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Approximant</td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ʋ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɹ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɻ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="j"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɰ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Lateralapproximant</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="l"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɭ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʎ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʟ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                      	</tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                          <tr>
+                            <th colspan="4">Vokale</th>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>vorn</td>
+                            <td>zentral</td>
+                            <td>hinten</td>
+                          </tr>
+                          <tr>
+                            <td>hoch, gespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="i"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="y"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɨ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʉ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɯ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="u"></td>
+                          </tr>
+                          <tr>
+                            <td>hoch, ungespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɯ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="u"></td>
+                            <td></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʊ"></td>
+                          </tr>
+                          <tr>
+                            <td>mittelhoch, gespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="e"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ø"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɘ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɵ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɤ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="o"></td>
+                          </tr>
+                          <tr>
+                            <td>mittelhoch, ungespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɛ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="œ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="æ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ə"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɜ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɞ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɐ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʌ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɔ"></td>
+                          </tr>
+                          <tr>
+                            <td>flach</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="a"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="œ"></td>
+                            <td></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɑ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɒ"></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                          <tr>
+                            <th colspan="2">Diakritika und Suprasegmentalia</th>
+                          </tr>
+                          <tr>
+                            <td>Haupt-/Nebenakzent</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˈ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˌ"></td>
+                          </tr>
+                          <tr>
+                            <td>lang</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ː"></td>
+                          </tr>
+                          <tr>
+                            <td>Silbengrenze</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="."></td>
+                          </tr>
+                          <tr>
+                            <td>verbunden</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="͜"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="͡"></td>
+                          </tr>
+                          <tr>
+                            <td>stimmlos</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̊"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̥"></td>
+                          </tr>
+                          <tr>
+                            <td>silbisch/nichtsilbisch</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̍"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̩"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̯"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="̆"></td>
+                          </tr>
+                          <tr>
+                            <td>nasaliert</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̃"></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    <table>
+                    	<tbody>
+                          <tr>
+                            <th colspan="2">Weitere Symbole</th>
+                          </tr>
+                          <tr>
+                              <td>[ʁ] reduziert</td>
+                              <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʶ"> </td>
+                          </tr>
+                          <tr>
+                            <td>[x] reduziert</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˣ"></td>
+                          </tr>
+                          <tr>
+                              <td>[ɐ] reduziert</td>
+                              <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ᵄ"></td>
+                            </tr>
+                          <tr>
+                            <td>stimmhaft labial-velarer Approximant</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="w"></td>
+                          </tr>
+                      	</tbody>
+                    </table>
+               
+               	</div>
+            <button class="buchstaben-keyboard active">Buchstaben Tastatur</button>    
+                <div class="ipa-panel">
+                
+                    <table>
+                    	<tbody>
+                            <tr>
+                            	<th colspan="12">Konsonanten</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>bilabial</td>
+                                <td>labiodental</td>
+                                <td>dental</td>
+                                <td>alveolar</td>
+                                <td>postalveolar</td>
+                                <td>retroflex</td>
+                                <td>palatal</td>
+                                <td>velar</td>
+                                <td>uvular</td>
+                                <td>pharyngeal</td>
+                                <td>glottal</td>
+                            </tr>
+                            <tr>
+                                <td>Plosiv</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="p"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="b"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="t"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="d"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ʈ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɖ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="c"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɟ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="k"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="g"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="q"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɢ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ˀ"></td>
+                            </tr>
+                            <tr>
+                                <td>Nasal</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="m"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɱ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="n"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɳ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɲ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ŋ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɴ"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Vibrant</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="ʙ"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="r"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                     class="dad_btn" value="ʀ"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Tap oder Flap</td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ⱱ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɾ"></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɽ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td> 
+                            </tr>
+                            <tr>
+                                <td>Frikativ</td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɸ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="β"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="f"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="v"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="θ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ð"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="s"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="z"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʃ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʒ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʂ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʐ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ç"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʝ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="x"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɣ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="χ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʁ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ħ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʕ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="h"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɦ"></td>
+                            </tr>
+                            <tr>
+                                <td>Lateralfrikativ</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɬ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɮ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Approximant</td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ʋ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɹ"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɻ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="j"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="ɰ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Lateralapproximant</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="l"></td>
+                                <td></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɭ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʎ"></td>
+                                <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʟ"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                      	</tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                          <tr>
+                            <th colspan="4">Vokale</th>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>vorn</td>
+                            <td>zentral</td>
+                            <td>hinten</td>
+                          </tr>
+                          <tr>
+                            <td>hoch, gespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="i"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="y"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɨ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʉ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɯ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="u"></td>
+                          </tr>
+                          <tr>
+                            <td>hoch, ungespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɯ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="u"></td>
+                            <td></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʊ"></td>
+                          </tr>
+                          <tr>
+                            <td>mittelhoch, gespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="e"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ø"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɘ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɵ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɤ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="o"></td>
+                          </tr>
+                          <tr>
+                            <td>mittelhoch, ungespannt</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɛ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="œ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="æ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ə"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɜ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɞ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɐ"></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʌ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɔ"></td>
+                          </tr>
+                          <tr>
+                            <td>flach</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="a"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="œ"></td>
+                            <td></td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɑ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ɒ"></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                          <tr>
+                            <th colspan="2">Diakritika und Suprasegmentalia</th>
+                          </tr>
+                          <tr>
+                            <td>Haupt-/Nebenakzent</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˈ"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˌ"></td>
+                          </tr>
+                          <tr>
+                            <td>lang</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ː"></td>
+                          </tr>
+                          <tr>
+                            <td>Silbengrenze</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="."></td>
+                          </tr>
+                          <tr>
+                            <td>verbunden</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="͜"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="͡"></td>
+                          </tr>
+                          <tr>
+                            <td>stimmlos</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̊"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̥"></td>
+                          </tr>
+                          <tr>
+                            <td>silbisch/nichtsilbisch</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̍"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̩"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                  class="dad_btn" value="̯"> <input type= "button"  onclick="clickButtonHandler(this)""
+                                class="dad_btn" value="̆"></td>
+                          </tr>
+                          <tr>
+                            <td>nasaliert</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="̃"></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    <table>
+                    	<tbody>
+                          <tr>
+                            <th colspan="2">Weitere Symbole</th>
+                          </tr>
+                          <tr>
+                              <td>[ʁ] reduziert</td>
+                              <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ʶ"> </td>
+                          </tr>
+                          <tr>
+                            <td>[x] reduziert</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ˣ"></td>
+                          </tr>
+                          <tr>
+                              <td>[ɐ] reduziert</td>
+                              <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="ᵄ"></td>
+                            </tr>
+                          <tr>
+                            <td>stimmhaft labial-velarer Approximant</td>
+                            <td><input type= "button"  onclick="clickButtonHandler(this)""
+                                 class="dad_btn" value="w"></td>
+                          </tr>
+                      	</tbody>
+                    </table>
+               
+               	</div>
+                
+        </div>
+    </div>
+    <div class="main">
+    	<div class="content">
+        <h2><a href="benutzerverwaltung.html"><i class="icon-users"></i>Benutzerverwaltung</a></h2>
+        <h2><a href="benutzerverwaltung.html">Zugangsverwaltung</a></h2>
+        <h2><a href="benutzerverwaltung.html">Erweiterungen verwalten</a></h2>
+        <h2><a href="benutzerverwaltung.html">Konfiguration</a></h2>
+        <h2><a href="benutzerverwaltung.html">Einstellungen fürs Template-Design</a></h2>
+        <h2><a href="benutzerverwaltung.html">Seiten wiederherstellen</a></h2>
+        <h2><a href="benutzerverwaltung.html">Popularitäts-Feedback (längere Ladezeit möglich)</a></h2>
+        </div>
+    </div>
+      
+</body>
+</html>
