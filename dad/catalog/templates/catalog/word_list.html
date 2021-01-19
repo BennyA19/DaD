@@ -1,6 +1,8 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+  <h1>Word List</h1>
+<div class="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -13,10 +15,9 @@
       <th scope="col">sampa</th>
     </tr>
   </thead>
-  <h1>word List</h1>
   {% if word_list %}
-  <ul>
     {% for word in word_list %}
+  <ul>
      <tr>
       <th scope="row">{{ word.id}}  </th>
       <th scope="row"><a href="{{ word.get_absolute_url}}">{{ word.entry}}</a></th>
@@ -28,8 +29,9 @@
     </tr>
     {% endfor %}
   </ul>
+  </table> 
+</div>
   {% else %}
     <p>There are no words in the library.</p>
   {% endif %}
-  </table>       
 {% endblock %}
