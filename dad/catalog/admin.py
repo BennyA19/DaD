@@ -19,6 +19,7 @@ admin.site.register(Active)
 @admin.register(Word)
 class WORDAdmin(admin.ModelAdmin):
     list_display = ('id','entry', 'index','display_tag','updated')
+    prepopulated_fields = {'slug': ('entry',)}  #automatically populates the field with the entry value
 
 
 #admin.site.register(ipa)

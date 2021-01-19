@@ -1,5 +1,7 @@
 import uuid
 from django.db import models
+from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 # Create your models here.
 class Tag(models.Model):
@@ -37,7 +39,7 @@ class Word(models.Model):
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
-    slug = models.SlugField(null=True) #needed for slug
+    slug = models.SlugField(null=False, unique=True) #needed for slug
     #ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
 
     Work_STATUS = (
