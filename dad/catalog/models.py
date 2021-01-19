@@ -37,6 +37,7 @@ class Word(models.Model):
     # leer = deutsch
     updated = models.DateTimeField(auto_now=True)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
+    slug = models.SlugField(null=True) #needed for slug
     #ipa = models.ForeignKey('ipa', on_delete=models.SET_NULL, null=True,blank=True)
 
     Work_STATUS = (
@@ -70,7 +71,7 @@ class Word(models.Model):
     
     def get_absolute_url(self):
         """Returns the url to access a detail record for this word."""
-        return reverse('word-detail', args=[str(self.id)])
+        return reverse('word-detail', kwargs={'slug': self.slug}) 
 
 class IPA(models.Model):
 
