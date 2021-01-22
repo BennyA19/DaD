@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+<title>htmlseite</title>
+<link rel="stylesheet" href="../Frontend DAD/css/style2.css">
+</head>
+
+<body>
+	<div class="main">
+		
+            	<header class="header">
+    		<div header style="text-align:center;">
+            	<h1>Verbesserung der Deutsches Aussprachewörterbuchs Website </h1>
+                <div class="logo"><img src="../Frontend DAD/images/logo1.png"></div>
+                
+            </div>
+        </header>
+        <div class="clear"></div>
+            <h2>Herausforderung</h2>
+                <p>Deutsches Aussprachewörterbuch ist ein ursprüngliches Projekt von der Universität Halle mit dem Ziel, eine digitale Plattform bereitzustellen, über die die Aussprachedaten von den wissenschaftlichen Benutzern aktualisiert werden und auf die alle Leute zugreifen können. Die jetztige Website ist aber entweder unattraktiv oder langsam wegen ihrer komplizierten Struktur und nicht übertragbarer Datenbank. Deswegen ist es nötig eine neue Version der Website zu haben. Folgende Schwerpunkte wurden dabei gesetzt:</p>
+                <ul>
+                    <li>2 neue Varianten vom User Interface (mit html, css, javasript) erstellen, damit der Auftraggeber danach sich für eines entscheiden kann.</li>
+                    <li>Neue Strukturierung erstellen.</li>
+                    <li>Neue Datenbank mit Maria DB entwickeln.</li>
+                    <li>Backend mit Python und dem Framework Django entwickeln.</li>
+                </ul>
+                
+                <h2>Ziel des Vorhabens</h2>
+                	<p>Am Ende des  Semesters hat die Website nicht nur ein neues und attraktiveres User Interface, sondern auch ein schnelleres und schmaleres Backend, wobei nun die Daten importiert und exportiert werden können.</p>
+                
+                <h2>Herangehensweise</h2>
+                <p>Die Studentengruppe hat aktiv mit dem Auftraggeber der Uni Halle zusammengearbeitet, um seine Wünsche mit einzubeziehen und danach die Aufgaben je nach den Fähigketen jedes Gruppemitglieds aufzuteilen und jede Woche ein Meeting mit dem Auftraggeber zu halten.</p>
+                
+                <h2>Fazit</h2>
+                Mit unserer neuen Version kann die Website sowohl einfacher als auch attraktiver bedient werden. Unter anderem läuft sie nun auch schneller und Website-Timeout's können vermieden werden.  
+            
+            <div class="clear"></div>
+            
+            		
+            		<div class="row">
+                    	<div class="col"><div class="small-box"><figure><img style="width:100%" id="myImg" class="img-fluid" src="images/homepage1.png"><figcaption>© Projekt DAD</figcaption></figure></div></div>
+                   		<div class="col"><div class="small-box"><figure><img style="width:108%" id="myImg" class="img-fluid" src="images/homepage2.png"><figcaption>© Projekt DAD</figcaption></figure></div></div>                    
+                    </div> 
+                    
+                                                                       <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                      <span class="close">&times;</span>
+                      <img id="modal-img" class="modal-content"  src="images">
+                        
+                      
+                      <div id="caption"></div>
+                    </div>
+	</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+// var img = document.getElementById("myImg");
+var modalImg = document.getElementById("modal-img");
+var captionText = document.getElementById("caption");
+// img.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
+
+document.addEventListener("click", (e) => {
+  const elem = e.target;
+  if (elem.id==="myImg") {
+    modal.style.display = "block";
+    modalImg.src = elem.dataset.biggerSrc || elem.src;
+    captionText.innerHTML = elem.alt; 
+  }
+})
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>
