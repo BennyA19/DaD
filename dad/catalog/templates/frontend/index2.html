@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 <title>Homepage</title>
+<link rel="stylesheet" href="../frontend/css/style.css">
+<link rel="stylesheet" href="../frontend/css/style.css">
 
-<link rel="stylesheet" href="../Frontend DAD/css/fontello.css">
-<link rel="stylesheet" href="../Frontend DAD/css/style.css">
 </head>
 
 <body>
@@ -14,13 +14,33 @@
     	<div class="main">
         	<div class="left-header">
             	<h1>
-                    <a href="index.html"><img src="../Frontend DAD/images/logo.png" alt=""> 
+                    <a href="index2.html"><img src="../images/logo.png" alt=""> 
                     <span class="project-name">Deutsche Aussprachedatenbank</span>
                     <span class="uni-name" style="font-size: .57em;text-transform: uppercase;padding-top: 2px;">Martin-Luther-Universität Halle-Wittenberg</span></a>
                 </h1>
+            	
             </div>    
             <div class="right-header">
             	<ul class="menu-list">
+                	<li class="item-menu1"><a href="index2.html"><i class="icon-menu" style="font-size:15px;"></i></a>
+                    	<ul class="sub-menu2">
+                        	<li><a href="index2.html">Hauptseite</a></li>
+                            <li><a href="#">Erweiterte Suche im Aussprachewörterbuch</a></li>
+                            <li><a href="#">Über die DAD</a></li>
+                            <li><a href="#">Hinweise zur Eindeutschung</a></li>
+                            <li><a href="#">Hinweise zur Transkription</a></li>
+                            <li><a href="#">Redaktionsportal</a></li>
+                           	<li><a href="#">Kontakt</a></li>
+                            <li><a href="rechtliches.html">Rechtliches</a>
+                            	<ul class="sub-menu">
+                                <li><a href="https://www.uni-halle.de/impressum.php?id=1/">Impressum</a></li>
+                                <li><a href="https://www.uni-halle.de/datenschutzerklaerung/">Datenschutzerklärung</a></li>
+                                <li><a href="https://www.uni-halle.de/disclaimer/">Disclaimer</a></li>
+                                <li><a href="#">Nutzungsbedingungen</a></li>
+                            </ul>
+                            </i>
+                        </ul>
+                    </i>
             	    <li class="item-menu1"><a href="#"><i class="icon-user" style="font-size:15px;"></i></a>
                         <ul class="sub-menu1">
                             <li><a href="#">Einloggen</a></li>
@@ -32,29 +52,8 @@
                        
         </div>       
     </header>
-    
-    <div class="menu">
-    	<div class="main">
-        	<ul class="menu-list">
-            	<li class="item-menu"><a href="index.html"><i>Hauptseite</i></a></li>
-                <li class="item-menu"><a href="#">Erweiterte Suche im Aussprachewörterbuch</a></li>
-                <li class="item-menu"><a href="#">Über die DAD</a></li>
-                <li class="item-menu"><a href="#">Hinweise zur Eindeutschung</a></li>
-                <li class="item-menu"><a href="#">Hinweise zur Transkription</a></li>
-                <li class="item-menu"><a href="#">Redaktionsportal</a></li>
-                <li class="item-menu"><a href="#">Kontakt</a></li>
-                <li class="item-menu"><a href="rechtliches.html">Rechtliches</a>
-                	<ul class="sub-menu">
-                    	<li><a href="https://www.uni-halle.de/impressum.php?id=1/">Impressum</a></li>
-                        <li><a href="https://www.uni-halle.de/datenschutzerklaerung/">Datenschutzerklärung</a></li>
-                        <li><a href="https://www.uni-halle.de/disclaimer/">Disclaimer</a></li>
-                        <li><a href="#">Nutzungsbedingungen</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
     <div class="main">
+   
         <form class="search-bar" style="margin:auto;max-width:900px;min-height:60px">
         	<input class="form-control" type="search" id="myInput" placeholder="Suche">
             <button type="submit"><i class="icon-search"></i></button>
@@ -419,19 +418,15 @@
     var i;
 
     for (i = 0; i < acc.length; i++) {
-      acc[i].onclick = function(){
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
+      acc[i].addEventListener("click", function(){
         this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
+		var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
           panel.style.display = "none";
         } else {
           panel.style.display = "block";
         }
-      }
+      });
     }
 </script>  
 </body>

@@ -2,18 +2,18 @@
 /* CSS Document */
 
 body {
-    font-style: normal;
+	font-style: normal;
     font-variant-ligatures: normal;
     font-variant-caps: normal;
     font-variant-numeric: normal;
     font-variant-east-asian: normal;
     font-weight: normal;
     font-stretch: normal;
-    font-size: 87.5%;
+    font-size: 100%;
     line-height: 1.4;
-    font-family: CharisSILW, Helvetica, Arial, sans-serif;
-	margin:0px;
-	background-color:#dedede;
+    font-family: CharisSILW;
+  	margin:0px;
+	background-color:#dedede;	
 }
 * {
     -webkit-box-sizing: border-box;
@@ -22,7 +22,34 @@ body {
 }
 a {text-decoration:none; color:#000;}
 ul {list-style-type:none;}
-h1, h2{font-size:14px;}
+li {font-family: CharisSILW;}
+h1, h2{
+    font-weight: bold;
+    padding: 0;
+    line-height: 1.2;
+    clear: left;
+}
+.header h1 {
+    margin: 32px 0 16px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1.75em;
+    font-weight: normal;
+}
+h1{	
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+}
+.header h1 img {
+    float: left;
+    margin-right: 1em;
+    width: 200px;
+}	
 .clear { clear:both;}
 .main {
 	max-width:1170px;
@@ -33,11 +60,10 @@ h1, h2{font-size:14px;}
 	width:100%;
 	float:left;
 	background-color:#FFF;
-	min-height:80px;
-	
+	min-height:130px;
 }
 .header .left-header{
-	width:80%;
+	width:90%;
 	float:left;
 }
 .header .left-header h1 {
@@ -80,7 +106,7 @@ img {
 }
 .header .right-header {
 	float:right;
-	width: 20%;
+	width: 10%;
 	min-height:40px;
 	background-color:#FFF;
 	color: #065ca6;
@@ -105,35 +131,53 @@ img {
 	float: left;
 }
 .item-menu1{background-color:#FFF;}
-.item-menu a, .item-menu1 a {
+.item-menu a, .item-menu1 a{
 	color:#FFF;
-	padding: 0 10px;
-	display:block;
+	padding: 0 8px;
+	display:block;	
 }
 .sub-menu {
 	display: none;
 	position: absolute;
-	min-width: 150px;
+	min-width: 50px;
 	min-height: 100px;
 	background-color:#0288d1;
 	top: 40px;
 	padding:0;
 	z-index: 1;
+	font-family: Helvetica,Arial,sans-serif;
 }
 .sub-menu1 {
+	border-collapse: collapse;
+    border: 1px solid #ccc;
 	display: none;
 	position: absolute;
 	min-width: 150px;
-	min-height: 100px;
+	min-height: 80px;
 	background-color:#FFF;
 	top: 40px;
 	padding:0;
 	z-index: 1;
+	
 }
+.sub-menu2 {
+	display: none;
+	border-collapse: collapse;
+    border: 1px solid #ccc;
+	position: absolute;
+	min-width: 270px;
+	min-height: 300px;
+	background-color:#FFF;
+	top: 40px;
+	padding:0;
+	z-index:1;
+}
+.sub-menu2 a, .sub-menu1 a{text-decoration: underline;}
 .item-menu:hover, .sub-menu li:hover {background-color: #2b73b7;}
+.item-menu1:hover, .sub-menu1 li:hover, .sub-menu2 li:hover {background-color:#CCC;}
 .item-menu:hover .sub-menu{display:inline-block;}
 .item-menu1:hover .sub-menu1{display:inline-block;}
-.item-menu1:hover, .sub-menu1 li:hover {background-color:#CCC;}
+.item-menu1:hover .sub-menu2{display:inline-block;}
 .content {
 	width:100%;
 	float:left;
@@ -161,7 +205,7 @@ button.ipa-keyboard {
     outline: none;
     transition: 0.4s;
 }
-p, ul, ol, dl, pre, table, hr, blockquote, figure, details, fieldset, address {
+p, ul, ol, dl, table{
     margin: 0 0 1.4em 0;
     padding: 0;
 }
@@ -169,7 +213,7 @@ button.buchstaben-keyboard {
 	width: 100%;
 	float:left;
 	line-height:30px;
-	color:#000;
+	color:#444;
 	text-align:left;
 	margin-top:5px;
 	cursor: pointer;
@@ -180,10 +224,8 @@ form.search-bar input[type=text]{
 	width: 93%;
 	float: left;
 	font-size: 17px;
-	border: 5px solid #0288d1;
 	margin-top:8px;
 	height: 50px;
-	/*border-radius: 10px;*/
 }
 form.search-bar button {
 	width: 7%;
@@ -212,6 +254,8 @@ th {
     background-color: #eee;
     text-align: left;
 	display: table-cell;
+	vertical-align: inherit;
+    text-align: -internal-center;
 }
 th, td {
     padding: .3em .5em;
@@ -221,7 +265,79 @@ th, td {
 }
 .right-header a {color: #2b73b7;}
 tr:nth-child(even) {background-color: #f2f2f2;}
+.form-control{
+    width: 93%;
+	float: left;
+	font-size: 17px;
+	
+	margin-top:8px;
+	height: 50px;
+	
+}
 
-
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?82108452');
+  src: url('../font/fontello.eot?82108452#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?82108452') format('woff2'),
+       url('../font/fontello.woff?82108452') format('woff'),
+       url('../font/fontello.ttf?82108452') format('truetype'),
+       url('../font/fontello.svg?82108452#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?82108452#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-user:before { content: '\e800'; } /* '' */
+.icon-search:before { content: '\e801'; } /* '' */
+.icon-pencil:before { content: '\e802'; } /* '' */
+.icon-users:before { content: '\e803'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-keyboard:before { content: '\f11c'; } /* '' */
+.icon-trash:before { content: '\f1f8'; } /* '' */
 
 

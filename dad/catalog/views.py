@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+#from ipas.models import Words
 
 # Create your views here.
 
@@ -36,6 +38,13 @@ class WordListView(generic.ListView):
 class WordDetailView(generic.DetailView):
     model = Word
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(WordDetailView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['ipa'] = ("My name is {{ my_name }}.")
+        return context
+
 class IpaListView(generic.ListView):
     model = IPA
 #    context_object_name = 'multiple_ipa_list' #name for the list
@@ -50,3 +59,4 @@ class IpaListView(generic.ListView):
 
 class IpaDetailView(generic.DetailView):
     model = IPA
+

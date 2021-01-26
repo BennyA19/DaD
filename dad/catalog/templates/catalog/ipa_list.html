@@ -12,6 +12,7 @@
             <th scope="col">syllable</th>
             <th scope="col">stress</th>
             <th scope="col">sampa</th>
+            <th scope="col">language</th>
         </tr>
     </thead>
   {% if ipa_list %}
@@ -25,6 +26,7 @@
         <th scope="row">{{ipa.syllable}}</th>
         <th scope="row">{{ipa.stress}}</th>
         <th scope="row">{{ipa.sampa}}</th>
+        <th scope="row">{{word.language}}</th>
     </tr>
     {% endfor %}
   </ul>
