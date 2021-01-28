@@ -75,19 +75,29 @@ class Word(models.Model):
         """Returns the url to access a detail record for this word."""
         return reverse('word-detail', kwargs={'slug': self.slug}) 
 
+    class Meta:
+        ordering = ["-entry"]
+
 class IPA(models.Model):
 
     """Model representing a specific ipa of a word (e.g that could be used for it)."""
     ipa = models.CharField(max_length=400)
-    word = models.ForeignKey('word', on_delete=models.SET_NULL, null=True,blank=True) 
+    word = models.ForeignKey('Word', on_delete=models.SET_NULL, null=True,blank=True) 
     syllable = models.IntegerField()
     stress = models.CharField(max_length=40)
     sampa = models.CharField(max_length=400)
     activity = models.ForeignKey('active', on_delete=models.SET_NULL, null=True)
     audio = models.FileField(upload_to='catalog/Audio/', default='catalog/Audio/AudioMissing.mp3')                                    ##Saves the path of the audio file
+    
     def get_absolute_url(self):
         """Returns the url to access a detail record for this ipa."""
         return reverse('ipa-detail', args=[str(self.id)])
+
+  #  def __str__(self):
+  #          return "%s (%s)" % (
+  #          self.ipa,
+  #          ", ".join(word.entry for word in self.word()),
+  #      )
 
 def get_stress(self):
     return(ipa.stress)
@@ -99,9 +109,6 @@ def get_stress(self):
             slug_field="ipa"
         )
     
-class Meta:
-    ordering = ['word','ipa']
-
 
 def __str__(self):
     """String for representing the Model object."""
