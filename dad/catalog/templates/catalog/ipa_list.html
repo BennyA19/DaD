@@ -20,9 +20,10 @@
   <ul>
      <tr>
         <th scope="row">{{ipa.id}}</th>
-        <th scope="row">{{ipa.ipa}}</th>
         <th scope="row">
-          <a href="{{ word.get_absolute_url}}">{{ipa.word}}</th>
+         <a href="{{ ipa.get_absolute_url}}">{{ipa.ipa}}</th>
+        <th scope="row">
+          <a href="{{ word.get_absolute_url}}">{{ipa.word.entry}}</th>
         <th scope="row">{{ipa.syllable}}</th>
         <th scope="row">{{ipa.stress}}</th>
         <th scope="row">{{ipa.sampa}}</th>

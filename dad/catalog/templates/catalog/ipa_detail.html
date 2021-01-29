@@ -3,7 +3,7 @@
 {% block content %}
   <h1>ipa: {{ ipa.ipa }}</h1>
 
-  <p><strong>entry:</strong> <a href="/catalog/word/{{ word.id }}">{{ipa.def_word }} </a></p> <!-- entry detail link not yet defined -->
+  <p><strong>entry:</strong> <a href="/catalog/word/{{ipa.word}}">{{ipa.word}} </a></p> <!-- entry detail link not yet defined -->
   <p><strong>syllable:</strong> {{ ipa.syllable }}</p> 
   <p><strong>stress:</strong> {{ ipa.stress}}</p>  
   <p><strong>sampa:</strong> {{ ipa.sampa}}</p>  
